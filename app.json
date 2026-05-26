@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "NearestBooze",
+    "slug": "nearestbooze",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.nearestbooze.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "NearestBooze needs your location to find the nearest bar or liquor store.",
+        "NSLocationAlwaysUsageDescription": "NearestBooze needs your location to find the nearest bar or liquor store."
+      }
+    },
+    "android": {
+      "package": "com.nearestbooze.app",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "NearestBooze needs your location to find the nearest bar or liquor store."
+        }
+      ]
+    ]
+  }
+}
