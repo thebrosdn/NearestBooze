@@ -21,7 +21,7 @@ const toRotation = (anim) =>
     extrapolate: 'extend',
   });
 
-export default function Compass({ heading, bearing }) {
+export default function Compass({ heading, bearing, accessibilityLabel }) {
   const ringAnim = useRef(new Animated.Value(0)).current;
   const needleAnim = useRef(new Animated.Value(0)).current;
   const prevRing = useRef(0);
@@ -40,7 +40,12 @@ export default function Compass({ heading, bearing }) {
   }, [heading, bearing]);
 
   return (
-    <View style={[st.wrap, { width: SIZE, height: SIZE }]}>
+    <View
+      style={[st.wrap, { width: SIZE, height: SIZE }]}
+      accessible
+      accessibilityRole="image"
+      accessibilityLabel={accessibilityLabel}
+    >
       {/* Outer glow ring (static) */}
       <View style={[st.glowRing, { width: SIZE + 10, height: SIZE + 10, borderRadius: (SIZE + 10) / 2 }]} />
 

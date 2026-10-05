@@ -5,28 +5,66 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
+    "icon": "./assets/icon.png",
+    "scheme": "nearestbooze",
+    "primaryColor": "#f5a623",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.nearestbooze.app",
+      "buildNumber": "1",
+      "config": {
+        "usesNonExemptEncryption": false
+      },
       "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "NearestBooze needs your location to find the nearest bar or liquor store.",
-        "NSLocationAlwaysUsageDescription": "NearestBooze needs your location to find the nearest bar or liquor store."
+        "NSLocationWhenInUseUsageDescription": "NearestBooze uses your location to find bars and liquor stores near you and point you toward them."
       }
     },
     "android": {
       "package": "com.nearestbooze.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0d0d1a"
+      },
       "permissions": [
         "ACCESS_FINE_LOCATION",
         "ACCESS_COARSE_LOCATION"
+      ],
+      "blockedPermissions": [
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.VIBRATE"
       ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
     },
     "plugins": [
       [
         "expo-location",
         {
-          "locationWhenInUsePermission": "NearestBooze needs your location to find the nearest bar or liquor store."
+          "locationWhenInUsePermission": "NearestBooze uses your location to find bars and liquor stores near you and point you toward them.",
+          "isIosBackgroundLocationEnabled": false,
+          "isAndroidBackgroundLocationEnabled": false,
+          "isAndroidForegroundServiceEnabled": false
         }
-      ]
+      ],
+      "expo-status-bar",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "backgroundColor": "#0d0d1a",
+          "imageWidth": 220,
+          "resizeMode": "contain"
+        }
+      ],
+      "@sentry/react-native"
     ]
   }
 }

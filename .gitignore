@@ -1,6 +1,11 @@
 node_modules/
 .expo/
 dist/
+.env
+.env.local
+ios/
+android/
+google-play-service-account.json
 npm-debug.*
 *.jks
 *.p8
